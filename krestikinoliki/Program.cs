@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace krestikinoliki
 {
-    //test
+    //testifuguyjgkuhjkn
+    //jhgj,njknoijjliuglyukhjhli
+    //jhbliji;ojoik;
     class Proga
     {
         private int[] massiv1 = new int[9];
 
         private Krestiki b;
+        public int kill;
 
         public Proga(Krestiki b)
         {
@@ -19,6 +22,7 @@ namespace krestikinoliki
         }
         public int hz()
         {
+            kill = 0;
             for (int i = 0; i < 9; i++)
             {
                 if (b.massiv[i] == "х")
@@ -37,48 +41,56 @@ namespace krestikinoliki
             }
             if (massiv1[0] + massiv1[1] + massiv1[2] == 102)
             {
+                kill = 1;
                 if (massiv1[0] == 100) { return 0; }
                 if (massiv1[1] == 100) { return 1; }
                 if (massiv1[2] == 100) { return 2; }
             }
             if (massiv1[3] + massiv1[4] + massiv1[5] == 102)
             {
+                kill = 1;
                 if (massiv1[3] == 100) { return 3; }
                 if (massiv1[4] == 100) { return 4; }
                 if (massiv1[5] == 100) { return 5; }
             }
             if (massiv1[6] + massiv1[7] + massiv1[8] == 102)
             {
+                kill = 1;
                 if (massiv1[6] == 100) { return 6; }
                 if (massiv1[7] == 100) { return 7; }
                 if (massiv1[8] == 100) { return 8; }
             }
             if (massiv1[0] + massiv1[3] + massiv1[6] == 102)
             {
+                kill = 1;
                 if (massiv1[0] == 100) { return 0; }
                 if (massiv1[3] == 100) { return 3; }
                 if (massiv1[6] == 100) { return 6; }
             }
             if (massiv1[1] + massiv1[4] + massiv1[7] == 102)
             {
+                kill = 1;
                 if (massiv1[1] == 100) { return 1; }
                 if (massiv1[4] == 100) { return 4; }
                 if (massiv1[7] == 100) { return 7; }
             }
             if (massiv1[2] + massiv1[5] + massiv1[8] == 102)
             {
+                kill = 1;
                 if (massiv1[2] == 100) { return 2; }
                 if (massiv1[5] == 100) { return 5; }
                 if (massiv1[8] == 100) { return 8; }
             }
             if (massiv1[0] + massiv1[4] + massiv1[8] == 102)
             {
+                kill = 1;
                 if (massiv1[0] == 100) { return 0; }
                 if (massiv1[4] == 100) { return 4; }
                 if (massiv1[8] == 100) { return 8; }
             }
             if (massiv1[2] + massiv1[4] + massiv1[6] == 102)
             {
+                kill = 1;
                 if (massiv1[2] == 100) { return 2; }
                 if (massiv1[4] == 100) { return 4; }
                 if (massiv1[6] == 100) { return 6; }
@@ -142,7 +154,7 @@ namespace krestikinoliki
         Proga c;
         private Random _random = new Random();
 
-        public string vtoroihod, tretiihod;
+        public string vtoroihod, tretiihod, prosral;
         public int chislo, rchislo, chislo2, dop;
         public Krestiki()
         {
@@ -201,10 +213,22 @@ namespace krestikinoliki
             {
                 b = _random.Next(1, 9);
             }
-            
-
             return b;
         }
+        public int Rand1379_2()
+        {
+            if (rchislo == 2)
+                return _random.Next(0, 1) == 0 ? 1 : 3;
+            if (rchislo == 4)
+                return _random.Next(0, 1) == 0 ? 1 : 7;
+            if (rchislo == 6)
+                return _random.Next(0, 1) == 0 ? 9 : 3;
+            if (rchislo == 8)
+                return _random.Next(0, 1) == 0 ? 7 : 9;
+            return 1;
+
+        }
+
         public int Randnew()
         {
             int b = _random.Next(1, 9);
@@ -215,12 +239,7 @@ namespace krestikinoliki
 
             return b;
         }
-
-        //private int RandomByTwo(int first, int second)
-        //{
-        //    return _random.Next(0, 1) == 0 ? first : second;
-        //}
-
+        
         public string[] massiv = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         public void X()
         {
@@ -298,12 +317,15 @@ namespace krestikinoliki
         }
         public void Hod3()
         {
+            
             massiv[chislo2 - 1] = "0";
 
             if (c.hz() == 33 & dop == 1)
             {
-                massiv[Randnew() - 1] = "х";
+                massiv[Rand1379_2()-1] = "х";
+                return;
             }
+
             if (c.hz() == 33)
             {
                 massiv[Randnew() - 1] = "х";
@@ -318,11 +340,21 @@ namespace krestikinoliki
         }
         public void iditenahui()
         {
-            Console.WriteLine("{0}{1}{2}\n{3}{4}{5}\n{6}{7}{8}\nделайте ход", massiv[0], massiv[1], massiv[2], massiv[3], massiv[4], massiv[5], massiv[6], massiv[7], massiv[8]);
-            //Console.WriteLine(Rand1());
-            //Console.WriteLine(Rand7());
-            //Console.WriteLine(Rand7_1());
+            string[] prosral1 = new string[] { "мне жаль(((", "ты лох азазазазаз", "просрал" };
+            prosral = prosral1[_random.Next(0, 2)];
+            if (c.kill == 1)
+            {
+                Console.WriteLine("{0}{1}{2}\n{3}{4}{5}\n{6}{7}{8}\n{9}", massiv[0], massiv[1], massiv[2], massiv[3], massiv[4], massiv[5], massiv[6], massiv[7], massiv[8], prosral);
+            }
+            else
+            {
+                Console.WriteLine("{0}{1}{2}\n{3}{4}{5}\n{6}{7}{8}\nделайте ход", massiv[0], massiv[1], massiv[2], massiv[3], massiv[4], massiv[5], massiv[6], massiv[7], massiv[8]);
+                //Console.WriteLine(Rand1());
+                //Console.WriteLine(Rand7());
+                //Console.WriteLine(Rand7_1());
+            }
         }
+
     }
 
     class Program
@@ -351,6 +383,8 @@ namespace krestikinoliki
                 a.chislo2 = Convert.ToInt32(a.tretiihod);
                 a.Hod3();
                 a.iditenahui();
+                Console.WriteLine(a.prosral);
+
             }
             
             Console.WriteLine("\n\n\n");
