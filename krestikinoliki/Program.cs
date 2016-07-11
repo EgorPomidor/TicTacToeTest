@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace krestikinoliki
 {
-    //test
+    //Ну и пиздец
+
     class Proga
     {
         private int[] massiv1 = new int[9];
@@ -137,6 +138,7 @@ namespace krestikinoliki
         }
 
     }
+
     class Krestiki
     {
         Proga c;
