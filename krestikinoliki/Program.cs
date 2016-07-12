@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace krestikinoliki
 {
-    
+    //Новый коммент
     class Proga
     {
         // bhf ;jgf
