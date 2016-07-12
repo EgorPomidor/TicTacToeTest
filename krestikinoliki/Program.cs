@@ -14,7 +14,7 @@ namespace krestikinoliki
 
         private Krestiki b;
         public int kill;
-
+       
         public Proga(Krestiki b)
         {
             this.b = b;
@@ -430,7 +430,7 @@ namespace krestikinoliki
             krilinol = krilinol.ToLower();
             if (krilinol == "х")
             {
-                Console.WriteLine("{0}{1}{2}\n{3}{4}{5}\n{6}{7}{8}\nделайте ход", masiv[0], masiv[1], masiv[2], masiv[3], masiv[4], masiv[5], masiv[6], masiv[7], masiv[8]);
+                
             }
             else if (krilinol == "0")
             {
