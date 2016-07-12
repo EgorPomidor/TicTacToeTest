@@ -9,6 +9,7 @@ namespace krestikinoliki
     
     class Proga
     {
+        // bhf ;jgf
         private int[] massiv1 = new int[9];
 
         private Krestiki b;
@@ -411,7 +412,8 @@ namespace krestikinoliki
         }
         public void iditenahui1()
         {
-                Console.WriteLine("{0}{1}{2}\n{3}{4}{5}\n{6}{7}{8}\nничья", massiv[0], massiv[1], massiv[2], massiv[3], massiv[4], massiv[5], massiv[6], massiv[7], massiv[8]);
+                Console.WriteLine("{0}{1}{2}\n{3}{4}{5}\n{6}{7}{8}\nничья", massiv[0],
+                    massiv[1], massiv[2], massiv[3], massiv[4], massiv[5], massiv[6], massiv[7], massiv[8]);
         }
 
     }
