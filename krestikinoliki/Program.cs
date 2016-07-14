@@ -207,12 +207,14 @@ namespace krestikinoliki
         }
         public int Rand1379_1()
         {
-            int b = _random.Next(1, 9);
-            while (b == 2 | b == 4 | b == 6 | b == 8 | b == 5 | b == h1 | b == chislo)
+            string[] a = new string[3];
+
+            for (int i = 0; i < 9; i++)
             {
-                b = _random.Next(1, 9);
+                if (massiv[i] != "х" | massiv[i] != "0") { return i; }
             }
-            return b;
+
+            return 1;
         }
         public int Rand1379_2()
         {
@@ -249,23 +251,26 @@ namespace krestikinoliki
 
             return b;
         }
+
+        // Женя, плиз, проверь вот этот метод Randnew1, я хз, на шару написал, вроде работает, я 
+        //тут типа в колдекцию добавляю номера элементов массива, которые такие же как и номера, не равные х и 0. потом выбиреаю случайный из них
         public int Randnew1()
         {
-            int b = _random.Next(1, 9);
-            while (b == h1 | b == chislo | b == chislo2 | b == chislo3 | b == h2 | b == h3)
+            List<int> a = new List<int>();
+            for (int i = 0; i < 9; i++)
             {
-                b = _random.Next(1, 9);
+                if (massiv[i] != "х" | massiv[i] != "0") { a.Add(i); }
             }
+            int b = _random.Next(0, 3);
 
-            return b;
+            return a[b];
         }
         public int Randnew2()
         {
             for (int i = 0; i<9; i++)
             {
-                if (massiv[i] != "х" | massiv[i] != "0") { return i; }
+                if (massiv[i] != "х" & massiv[i] != "0") { return i; }
             }
-             
             return 1;
         }
 
@@ -331,7 +336,7 @@ namespace krestikinoliki
                     massiv[h2] = "х";
                 }
                 // противоположный угол
-                else if (h1 + chislo == 10)
+                else if (h1 + chislo == 9)
                 {
                     dop = 2;
                     h2 = Rand1379_1() - 1;
@@ -391,13 +396,13 @@ namespace krestikinoliki
         public void Hod5()
         {
             massiv[chislo4 - 1] = "0";
-            h5 = Randnew2() - 1;
+            h5 = Randnew2();
             massiv[h5] = "х";
         }
 
         public void iditenahui()
         {
-            int a = _random.Next(0, 2);
+            int a = _random.Next(0, 3);
             string[] prosral1 = new string[] { "мне жаль(((", "ты лох азазазазаз", "просрал" };
             prosral = prosral1[a];
             if (c.kill == 1)
